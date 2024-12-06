@@ -27,6 +27,7 @@ import stripeConfig from './stripe/config/stripe.config';
 import { StripeModule } from './stripe/stripe.module';
 import { UsersModule } from './users/users.module';
 import { WishListModule } from './wish-list/wish-list.module';
+import { HealthModule } from './health/health.module';
 
 @Module({
   imports: [
@@ -64,6 +65,7 @@ import { WishListModule } from './wish-list/wish-list.module';
     AnalyticsModule,
     WishListModule,
     AuthGoogleModule,
+    HealthModule,
   ],
   controllers: [AppController],
   providers: [AppService],
