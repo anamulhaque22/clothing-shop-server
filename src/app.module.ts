@@ -17,6 +17,7 @@ import cloudinaryConfig from './cloudinary/config/cloudinary.config';
 import appConfig from './config/app.config';
 import databaseConfig from './database/config/database.config';
 import { TypeOrmConfigService } from './database/typeorm-config.service';
+import { HealthModule } from './health/health.module';
 import mailConfig from './mail/config/mail.config';
 import { MailModule } from './mail/mail.module';
 import { MailerModule } from './mailer/mailer.module';
@@ -64,6 +65,7 @@ import { WishListModule } from './wish-list/wish-list.module';
     AnalyticsModule,
     WishListModule,
     AuthGoogleModule,
+    HealthModule,
   ],
   controllers: [AppController],
   providers: [AppService],
