@@ -70,7 +70,9 @@ export class ProductEntity extends EntityHelper {
   // @Column({ type: 'boolean', default: false })
   // recommended: boolean;
 
-  @OneToMany(() => WishListEntity, (wishlist) => wishlist.product)
+  @OneToMany(() => WishListEntity, (wishlist) => wishlist.product, {
+    eager: true,
+  })
   wishlist: WishListEntity[];
 
   @CreateDateColumn()

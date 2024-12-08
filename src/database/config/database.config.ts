@@ -82,5 +82,6 @@ export default registerAs<DatabaseConfig>('database', () => {
     ca: process.env.DATABASE_CA,
     key: process.env.DATABASE_KEY,
     cert: process.env.DATABASE_CERT,
+    sslMode: 'require',
   };
 });

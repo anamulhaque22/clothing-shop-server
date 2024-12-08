@@ -21,6 +21,14 @@ export class CategoryRepositoryImpl implements CategoryRepository {
     );
   }
   async getCategoryWithSubCategories(id: Category['id']): Promise<Category[]> {
+    if (!id) {
+      throw new NotFoundException({
+        status: HttpStatus.NOT_FOUND,
+        errors: {
+          message: 'Category not found',
+        },
+      });
+    }
     const category = await this.categoryRepository.find({
       where: { parentCategory: Equal(Number(id)) },
     });

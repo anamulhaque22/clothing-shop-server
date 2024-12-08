@@ -566,8 +566,6 @@ export class AuthService {
       hash,
     });
 
-    console.log({ user, userByEmail });
-
     return {
       refreshToken,
       token: jwtToken,

@@ -1,4 +1,5 @@
 import {
+  HttpStatus,
   Injectable,
   NotFoundException,
   UnprocessableEntityException,
@@ -38,6 +39,14 @@ export class CategoriesService {
   }
 
   async getCategoryWithSubCategories(id: Category['id']): Promise<Category[]> {
+    if (!id) {
+      throw new UnprocessableEntityException({
+        status: HttpStatus.UNPROCESSABLE_ENTITY,
+        errors: {
+          id: 'Category id is required',
+        },
+      });
+    }
     return this.categoryRepository.getCategoryWithSubCategories(id);
   }
 

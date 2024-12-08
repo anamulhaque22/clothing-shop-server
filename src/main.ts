@@ -21,7 +21,7 @@ async function bootstrap() {
   const corsOptions: CorsOptions = {
     origin: [
       configService.getOrThrow('app.frontendCustomerDomain', { infer: true }),
-      'https://clothing-shop-delta.vercel.app',
+      'http://localhost:3000',
       'https://clothing-shop-client.vercel.app',
     ],
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],

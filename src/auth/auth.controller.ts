@@ -145,7 +145,7 @@ export class AuthController {
     if (!files || !files.image) {
       throw new UnprocessableEntityException('You need to upload an image.');
     }
-    console.log(files.image);
+
     return this.authService.uploadUserImage(files['image'][0]);
   }
 

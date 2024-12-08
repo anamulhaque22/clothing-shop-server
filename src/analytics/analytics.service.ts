@@ -21,8 +21,6 @@ export class AnalyticsService {
     const totalOrders = await this.analyticsRepo.getTotalOrders();
     const totalProducts = await this.analyticsRepo.getTotalProducts();
 
-    console.log(totalRevenue, totalActiveCustomers, totalOrders, totalProducts);
-
     return {
       totalRevenue: totalRevenue[0]?.totalRevenue,
       totalActiveCustomers: totalActiveCustomers[0]?.activeUsers,
