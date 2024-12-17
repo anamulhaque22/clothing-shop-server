@@ -46,7 +46,7 @@ export class CategoryRepositoryImpl implements CategoryRepository {
 
         SELECT t.id, t.name, t."parentCategoryId"
         FROM categories t
-        INNER JOIN categories d ON t."parentCategoryId" = d.id
+        INNER JOIN all_categories d ON t."parentCategoryId" = d.id
     )
     SELECT * FROM all_categories;`,
       [id],
